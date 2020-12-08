@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 
 import './index.css';
 import App from './App';
-import reducer from './reducers';
+import { reducer, getInitialState } from './reducers';
 import rootSaga from './sagas';
 
 // import * as serviceWorker from './serviceWorker';
@@ -16,6 +16,7 @@ import rootSaga from './sagas';
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
   reducer,
+  getInitialState(),
   applyMiddleware(sagaMiddleware, logger),
 );
 

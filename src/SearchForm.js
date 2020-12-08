@@ -25,7 +25,6 @@ class SearchFormBase extends Component {
     }
 
     render() {
-        // TODO: send payload!!!
         return (
             <form onSubmit={this.handleSubmit}>
                 <TextField

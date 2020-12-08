@@ -1,7 +1,8 @@
 import { call, put, takeLatest } from 'redux-saga/effects'
 
+const apiKey = '7c83e308'; // TODO: get from package.json or something similar
+
 async function fetchMoviesCall(keyword) {
-    const apiKey = '7c83e308';
     const apiRequest = `http://omdbapi.com/?apikey=${apiKey}&s=${keyword}`;
     return await fetch(apiRequest).then(response => response.json());
 }
@@ -17,7 +18,7 @@ function* fetchMovies(action) {
 }
 
 function* rootSaga() {
-    yield takeLatest("FETCH_MOVIES", fetchMovies);
+    yield takeLatest('FETCH_MOVIES', fetchMovies);
 }
 
 export default rootSaga;
