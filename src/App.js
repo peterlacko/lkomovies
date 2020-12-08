@@ -5,9 +5,9 @@ import {
   Route,
   NavLink
 } from "react-router-dom";
-import Favorites from './Favorites';
+import { FavoriteMovies } from './FavoritesMovies';
 import { SearchForm } from './SearchForm';
-import { MoviesList } from './MoviesList';
+import { QueriedMovies } from './QueriedMovies';
 import { MovieDetail } from './MovieDetail';
 import './App.css';
 
@@ -31,10 +31,10 @@ function App() {
             <Switch>
               <Route exact path='/'>
                 <SearchForm />
-                <MoviesList />
+                <QueriedMovies />
               </Route>
               <Route path='/favorites'>
-                <Favorites />
+                <FavoriteMovies />
               </Route>
               <Route path='/detail'>
                   <MovieDetail />

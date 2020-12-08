@@ -2,8 +2,8 @@
 
 function getFavoritesFromLocalStore() {
   try {
-    const serialisedState = localStorage.getItem('favoriteMovies');
-    return serialisedState ? JSON.parse(serialisedState) : [];
+    const serialisedMovies = localStorage.getItem('favoriteMovies');
+    return serialisedMovies ? JSON.parse(serialisedMovies) : [];
   } catch (e) {
     console.warn(e);
     return undefined;
