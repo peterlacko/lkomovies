@@ -28,18 +28,31 @@ function getMoviesFromResponse(response) {
   return response.Search ? response.Search : [];
 }
 
+function saveLocalFavorites(favoriteMovies) {
+  try {
+    const serialisedMovies = JSON.stringify(favoriteMovies);
+    localStorage.setItem('favoriteMovies', serialisedMovies);
+  } catch (e) {
+    console.warn(e);
+  }
+
+}
+
 function addFavorite(favoriteMovies, movie) {
   if (isMovieFavorite(favoriteMovies, movie)) {
     return favoriteMovies;
   }
 
-  const newArr = favoriteMovies.slice();
-  newArr.push(movie);
-  return newArr;
+  const newFavorites = favoriteMovies.slice();
+  newFavorites.push(movie);
+  saveLocalFavorites(newFavorites);
+  return newFavorites;
 }
 
 function removeFavorite(favoriteMovies, movie) {
-  return favoriteMovies.filter(m => m.imdbID !== movie.imdbID);
+  const newFavorites = favoriteMovies.filter(m => m.imdbID !== movie.imdbID);
+  saveLocalFavorites(newFavorites);
+  return newFavorites;
 }
 
 export const reducer = (state, action) => {
