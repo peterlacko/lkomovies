@@ -5,7 +5,7 @@ import {
   Route,
   NavLink
 } from "react-router-dom";
-import { FavoriteMovies } from './FavoritesMovies';
+import { FavoriteMovies } from './FavoriteMovies';
 import { SearchForm } from './SearchForm';
 import { QueriedMovies } from './QueriedMovies';
 import { MovieDetail } from './MovieDetail';
@@ -36,7 +36,7 @@ function App() {
               <Route path='/favorites'>
                 <FavoriteMovies />
               </Route>
-              <Route path='/detail'>
+              <Route path='/detail/:id'>
                   <MovieDetail />
               </Route>
             </Switch>

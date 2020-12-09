@@ -9,8 +9,8 @@ export class MoviesList extends Component {
           return (
             <Link
               key={index}
-              to={"/detail"}
-              onClick={() => this.props.movieDetailClicked(movie)}
+              to={`/detail/${movie.imdbID}`}
+              onClick={() => this.props.movieDetailRequested(movie)}
             >
               <div>{movie.Title}</div>
             </Link>

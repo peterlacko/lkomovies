@@ -18,6 +18,7 @@ class MovieDetailBase extends Component {
         )}
         <div>Year: {movie.Year}</div>
         <div>Type: {movie.Type}</div>
+        <div>Genre: {movie.Genre}</div>
         <img src={movie.Poster}></img>
       </div>
     );

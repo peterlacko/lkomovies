@@ -62,15 +62,18 @@ export const reducer = (state, action) => {
     case 'FETCH_MOVIES_SUCCESS':
       return {
         ...state,
-        moviesList: getMoviesFromResponse(action.json),
+        moviesList: getMoviesFromResponse(action.payload),
         loading: false
       }
-    case 'MOVIE_DETAIL_CLICKED':
-      return { ...state, selectedMovie: action.payload }
+    // case 'MOVIE_DETAIL_CLICKED':
+    //  return { ...state, selectedMovie: action.payload };
     case 'ADD_FAVORITE':
-      return { ...state, favoriteMovies: addFavorite(state.favoriteMovies, action.payload)}
+      return { ...state, favoriteMovies: addFavorite(state.favoriteMovies, action.payload)};
     case 'REMOVE_FAVORITE':
-      return { ...state, favoriteMovies: removeFavorite(state.favoriteMovies, action.payload)}
+      return { ...state, favoriteMovies: removeFavorite(state.favoriteMovies, action.payload)};
+    case 'FETCH_MOVIE_DETAIL_SUCCESS':
+      return { ...state, selectedMovie: action.payload };
+
     default:
       return state;
   }

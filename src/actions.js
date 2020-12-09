@@ -3,8 +3,8 @@ export const fetchMovies = (payload) => ({
   payload,
 });
 
-export const movieDetailClicked = (movie) => ({
-  type: "MOVIE_DETAIL_CLICKED",
+export const movieDetailRequested = (movie) => ({
+  type: "MOVIE_DETAIL_REQUESTED",
   payload: movie,
 });
 
