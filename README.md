@@ -5,17 +5,13 @@ What can it do?
 - show details of the movie
 - save and remove movie to/from favorites
 
-### Known issues
-- API key is stored unecrypted
-- movies can not be loaded by passing movie id into url, thus
-- reload when on movie detail does not work
-
 ### TODO
 - write tests
 - improve handling with objects, eg. safe get
 - rewrite to pure components & hooks
 - pagination of search results 
 - improve styling and styles handling
+- encrypt ApiKey
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
