@@ -3,12 +3,12 @@ import { call, put, takeLatest } from 'redux-saga/effects';
 const apiKey = '7c83e308';
 
 async function fetchMoviesCall(keyword) {
-  const apiRequest = `http://omdbapi.com/?apikey=${apiKey}&s=${keyword}`;
+  const apiRequest = `https://omdbapi.com/?apikey=${apiKey}&s=${keyword}`;
   return await fetch(apiRequest).then((response) => response.json());
 }
 
 async function fetchMovie(movieId) {
-  const apiRequest = `http://omdbapi.com/?apikey=${apiKey}&i=${movieId}`;
+  const apiRequest = `https://omdbapi.com/?apikey=${apiKey}&i=${movieId}`;
   return await fetch(apiRequest).then((response) => response.json());
 }
 
