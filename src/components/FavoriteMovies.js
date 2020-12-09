@@ -1,27 +1,18 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { movieDetailRequested } from "../actions";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { MoviesList } from './MoviesList';
 
 class FavoriteMoviesBase extends Component {
   render() {
-    return (
-      <MoviesList
-        moviesList={this.props.moviesList}
-        movieDetailRequested={this.props.movieDetailRequested}/>
-    );
+    return <MoviesList moviesList={this.props.moviesList} />;
   }
 }
 
 const mapStateToProps = (state) => {
-  return { moviesList: state.favoriteMovies }
-  };
-
-const mapDispatchToProps = {
-  movieDetailRequested,
+  return { moviesList: state.favoriteMovies };
 };
+
 export const FavoriteMovies = connect(
   mapStateToProps,
-  mapDispatchToProps
+  null
 )(FavoriteMoviesBase);
-

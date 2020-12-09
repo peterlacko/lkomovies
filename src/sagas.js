@@ -1,6 +1,6 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 
-const apiKey = '7c83e308';
+const apiKey = 'changeMe';
 
 async function fetchMoviesCall(keyword) {
   const apiRequest = `https://omdbapi.com/?apikey=${apiKey}&s=${keyword}`;
@@ -24,7 +24,7 @@ function* fetchMovies(action) {
 
 function* getMovieDetail(action) {
   try {
-    const movieId = action.payload.imdbID;
+    const movieId = action.payload;
     const movieDetail = yield call(fetchMovie, movieId);
     yield put({ type: 'FETCH_MOVIE_DETAIL_SUCCESS', payload: movieDetail });
   } catch (e) {

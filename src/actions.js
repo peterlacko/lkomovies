@@ -3,9 +3,9 @@ export const fetchMovies = (payload) => ({
   payload,
 });
 
-export const movieDetailRequested = (movie) => ({
+export const movieDetailRequested = (movieId) => ({
   type: 'MOVIE_DETAIL_REQUESTED',
-  payload: movie,
+  payload: movieId,
 });
 
 export const addFavorite = (movie) => ({

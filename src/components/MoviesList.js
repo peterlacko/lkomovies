@@ -34,7 +34,7 @@ export function MoviesList(props) {
               key={index}
               className={styles.listText}
               to={`/detail/${movie.imdbID}`}
-              onClick={() => props.movieDetailRequested(movie)}
+              // onClick={() => props.movieDetailRequested(movie)}
             >
               <ListItemText >{movie.Title}</ListItemText>
             </Link>
