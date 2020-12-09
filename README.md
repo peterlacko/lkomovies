@@ -10,8 +10,10 @@ What can it do?
 - improve handling with objects, eg. safe get
 - rewrite to pure components & hooks
 - pagination of search results 
-- improve styling and styles handling
+- improve styling 
+- fix POST to invalid movieId
 - encrypt ApiKey
+- fix mobile view
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 

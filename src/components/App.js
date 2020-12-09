@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { AppBar, Toolbar, Button, Link } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -7,7 +7,8 @@ import { FavoriteMovies } from './FavoriteMovies';
 import { SearchForm } from './SearchForm';
 import { QueriedMovies } from './QueriedMovies';
 import { MovieDetail } from './MovieDetail';
-import { movieDetailRequested } from "../actions";
+import { NotFound } from './NotFound';
+import { movieDetailRequested } from '../actions';
 
 const useStyles = makeStyles({
   appHeader: {
@@ -73,8 +74,11 @@ function AppBase(props) {
               children={({ match }) => {
                 props.movieDetailRequested(match.params.id);
                 return <MovieDetail />;
-              }}>
-              </Route>
+              }}
+            ></Route>
+            <Route path='*'>
+              <NotFound />
+            </Route>
           </Switch>
         </Router>
       </header>
@@ -86,7 +90,4 @@ const mapDispatchToProps = {
   movieDetailRequested,
 };
 
-export const App = connect(
-  null,
-  mapDispatchToProps
-)(AppBase);
+export const App = connect(null, mapDispatchToProps)(AppBase);
