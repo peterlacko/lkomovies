@@ -1,5 +1,3 @@
-// TODO: move to separate file
-
 function getFavoritesFromLocalStore() {
   try {
     const serialisedMovies = localStorage.getItem('favoriteMovies');
