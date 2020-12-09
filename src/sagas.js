@@ -1,6 +1,6 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 
-const apiKey = '7c83e308';
+const apiKey = 'yourKeyHere';
 
 async function fetchMoviesCall(keyword) {
   const apiRequest = `http://omdbapi.com/?apikey=${apiKey}&s=${keyword}`;

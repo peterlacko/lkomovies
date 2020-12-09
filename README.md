@@ -13,7 +13,7 @@ What can it do?
 ### TODO
 - write tests
 - improve handling with objects, eg. safe get
-- rewrite to pure components
+- rewrite to pure components & hooks
 - pagination of search results 
 - improve styling and styles handling
 

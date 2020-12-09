@@ -11,8 +11,7 @@ function getFavoritesFromLocalStore() {
 export const getInitialState = () => ({
     moviesList: [],
     selectedMovie: {},
-    favoriteMovies: getFavoritesFromLocalStore(),
-    loading: false
+    favoriteMovies: getFavoritesFromLocalStore()
   }
 ) 
 
@@ -55,16 +54,11 @@ function removeFavorite(favoriteMovies, movie) {
 
 export const reducer = (state, action) => {
   switch (action.type) {
-    case 'FETCH_MOVIES':
-      return { ...state, loading: true };
     case 'FETCH_MOVIES_SUCCESS':
       return {
         ...state,
-        moviesList: getMoviesFromResponse(action.payload),
-        loading: false
+        moviesList: getMoviesFromResponse(action.payload)
       }
-    // case 'MOVIE_DETAIL_CLICKED':
-    //  return { ...state, selectedMovie: action.payload };
     case 'ADD_FAVORITE':
       return { ...state, favoriteMovies: addFavorite(state.favoriteMovies, action.payload)};
     case 'REMOVE_FAVORITE':
