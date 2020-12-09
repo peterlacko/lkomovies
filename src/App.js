@@ -29,17 +29,19 @@ const useStyles = makeStyles({
   topNav: {
       display: 'flex',
       justifyContent: 'center'
-  }
+  },
 
+  movieSearch: {
+    paddingTop: '80px'
+  }
 });
 
 function App() {
-  const styles=useStyles();
+  const styles = useStyles();
   return (
     <div className='App'>
       <header className={styles.appHeader}>
         <Router>
-          <span>
             <AppBar title='My App'>
               <Toolbar className={styles.topNav}>
                 <Link className={styles.topLink} href='/' component={Button}>
@@ -52,8 +54,10 @@ function App() {
             </AppBar>
             <Switch>
               <Route exact path='/'>
-                <SearchForm />
-                <QueriedMovies />
+                <div className={styles.movieSearch}>
+                  <SearchForm />
+                  <QueriedMovies />
+                </div>
               </Route>
               <Route path='/favorites'>
                 <FavoriteMovies />
@@ -62,7 +66,6 @@ function App() {
                 <MovieDetail />
               </Route>
             </Switch>
-          </span>
         </Router>
       </header>
     </div>
