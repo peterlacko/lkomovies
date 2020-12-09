@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { movieDetailRequested } from "./actions";
+import { movieDetailRequested } from "../actions";
 import { MoviesList } from './MoviesList';
 
-class FavoriteMoviesBase extends Component {
+class QueriedMoviesBase extends Component {
   render() {
     return (
       <MoviesList
@@ -13,15 +13,14 @@ class FavoriteMoviesBase extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return { moviesList: state.favoriteMovies }
-  };
+const mapStateToProps = (state) => ({
+  moviesList: state.moviesList,
+});
 
 const mapDispatchToProps = {
   movieDetailRequested,
 };
-export const FavoriteMovies = connect(
+export const QueriedMovies = connect(
   mapStateToProps,
   mapDispatchToProps
-)(FavoriteMoviesBase);
-
+)(QueriedMoviesBase);

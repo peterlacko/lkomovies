@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { AppBar, Toolbar, Button, Link } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 import { FavoriteMovies } from './FavoriteMovies';
 import { SearchForm } from './SearchForm';
 import { QueriedMovies } from './QueriedMovies';
 import { MovieDetail } from './MovieDetail';
-import { AppBar, Toolbar, Button, Link } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
   appHeader: {

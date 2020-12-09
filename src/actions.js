@@ -1,19 +1,19 @@
 export const fetchMovies = (payload) => ({
-  type: "FETCH_MOVIES",
+  type: 'FETCH_MOVIES',
   payload,
 });
 
 export const movieDetailRequested = (movie) => ({
-  type: "MOVIE_DETAIL_REQUESTED",
+  type: 'MOVIE_DETAIL_REQUESTED',
   payload: movie,
 });
 
 export const addFavorite = (movie) => ({
-  type: "ADD_FAVORITE",
+  type: 'ADD_FAVORITE',
   payload: movie,
 });
 
 export const removeFavorite = (movie) => ({
-  type: "REMOVE_FAVORITE",
+  type: 'REMOVE_FAVORITE',
   payload: movie,
 });

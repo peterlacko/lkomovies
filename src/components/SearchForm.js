@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchMovies } from "./actions";
-
 import { TextField, InputAdornment, IconButton } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
+
+import { fetchMovies } from "../actions";
 
 class SearchFormBase extends Component {
   constructor(props) {
